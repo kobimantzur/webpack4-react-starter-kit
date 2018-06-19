@@ -1,0 +1,23 @@
+Index: htdocs/FP/Library/AccountManager.inc.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- htdocs/FP/Library/AccountManager.inc.php	(revision 185197)
++++ htdocs/FP/Library/AccountManager.inc.php	(date 1528728883000)
+@@ -5097,7 +5097,14 @@
+         ];
+ 
+         $salutation = TEXT_TEMPLATE(CTEXT_G('Partners', 'Thank you email dear 1', $languageCode), $salutationTokens);
+-        $message = XMLStringParser::parse(TEXT_TEMPLATE(str_replace("<br>", "\n", TEXT_G('Mail', 'Email change message', $languageCode)), $messageTokens));
++//        $message = XMLStringParser::parse(TEXT_TEMPLATE(str_replace("<br>", "\n", TEXT_G('Mail', 'Email change message', $languageCode)), $messageTokens));
++        // Different messages for when the email is triggered by user changing their own email, and from change-email-utility
++        // param "emails" is sent only from the util
++        if (is_null($_POST['emails'])) {
++            $message = XMLStringParser::parse(TEXT_TEMPLATE(str_replace("<br>", "\n", TEXT_G('Mail', 'Email change message', $languageCode)), $messageTokens));
++        } else {
++            $message = XMLStringParser::parse(TEXT_TEMPLATE(str_replace("<br>", "\n", TEXT_G('Mail', 'Email change by support body', $languageCode)), $messageTokens));
++        }
+         $regards = str_replace("<br>", "\n", CTEXT('EmailCampaignsGeneral', 'Signature_Best regards', $languageCode));
+         $signature = TEXT('Mail', 'Add email from immersive email signature', $languageCode);
+         $body = implode("\n\n", [$salutation, $message, $regards, $signature]);
