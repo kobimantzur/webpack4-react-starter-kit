@@ -5,9 +5,6 @@ import PropTypes from 'prop-types'
 import { connect } from "react-redux";
 import { postRequest } from '../../reducers/Home/actions';
 class Home extends Component {
-//   static propTypes = {
-//     prop: PropTypes
-//   }
 
   render() {
     return (
@@ -22,6 +19,7 @@ class Home extends Component {
   }
 }
 const mapStateToProps = ({}) => {
+  return {}
 
 }
 const mapDispatchToProps = {

@@ -1,15 +1,16 @@
 {
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
+          "useBuiltIns": false,
           "targets": {
             "browsers": ["last 2 versions"]
           },
           "debug": false
         },
       ],
-      "babel-preset-react"
+      "@babel/preset-react"
     ],
-    "plugins": ["transform-runtime", "react-hot-loader/babel"]
+    "plugins": ["@babel/plugin-transform-runtime", "react-hot-loader/babel"]
   }
