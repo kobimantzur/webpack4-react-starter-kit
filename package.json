@@ -2,7 +2,7 @@
   "name": "webpack4-react-starter-kit",
   "version": "1.0.0",
   "description": "",
-  "repository": "https://github.com/lawwantsin/webpack-course.git",
+  "repository": "https://github.com/kobimantzur/webpack4-react-starter-kit.git",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
