@@ -5,7 +5,6 @@ const HTMLWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
   entry: {
     main: [
-      "babel-runtime/regenerator",
       "react-hot-loader/patch",
       "webpack-hot-middleware/client?reload=true",
       "./src/main.js"
@@ -20,6 +19,7 @@ module.exports = {
   devServer: {
     contentBase: "dist",
     overlay: true,
+    hot: true,
     stats: {
       colors: true
     }

@@ -10,9 +10,9 @@ import Routes from './routes';
 const store = configureStore();
 
 const App = ({ history }) => (
-  <ConnectedRouter history={history}>
-    <Routes />
-  </ConnectedRouter>
+  // <ConnectedRouter history={history}>
+    <Routes history={history} />
+  // </ConnectedRouter>
 );
 
 App.propTypes = {
