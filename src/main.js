@@ -1,7 +1,5 @@
 
 
-// require("babel-register")
-require("./main.scss")
 require("./index.html")
 require("./app")
 

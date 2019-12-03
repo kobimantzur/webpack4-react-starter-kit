@@ -3,16 +3,13 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'connected-react-router';
 import { configureStore, history } from './configureStore';
 import Routes from './routes';
 
 const store = configureStore();
 
 const App = ({ history }) => (
-  // <ConnectedRouter history={history}>
     <Routes history={history} />
-  // </ConnectedRouter>
 );
 
 App.propTypes = {
