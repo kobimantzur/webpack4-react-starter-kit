@@ -6,14 +6,6 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-transform-runtime": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.4.4",
-    "@babel/runtime": "^7.4.3",
     "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
@@ -38,8 +30,17 @@
     "webpack-hot-middleware": "2.21.0"
   },
   "dependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.4.3",
     "ajv": "^6.2.0",
     "connected-react-router": "^4.4.1",
+    "express": "^4.17.1",
     "react": "^16.4.0",
     "react-dom": "*",
     "react-hot-loader": "next",
@@ -50,9 +51,12 @@
   },
   "scripts": {
     "start": "webpack-dev-server --max_old_space_size=4000 --config=config/webpack.dev.js",
+    "prebuild": "npm install",
     "build": "webpack --max_old_space_size=4000 --config=config/webpack.prod.js",
     "build:dev": "webpack --max_old_space_size=4000 --config=config/webpack.dev.js",
     "dev": "nodemon --inspect --watch config --watch src/server src/server/main.js",
+    "preprod:heroku": "npm install",
+    "prod:heroku": "npm run prod",
     "prod": "NODE_ENV=production node src/server/main.js"
   }
 }
